@@ -5,6 +5,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:cache="http://namespaces.zope.org/cache"
     i18n_domain="rhaptos.xmlfile">
 
     <includeDependencies package="." />
@@ -28,6 +29,11 @@
         directory="profiles/default"
         description="Manage XML files in Plone"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <cache:ruleset
+        for="rhaptos.xmlfile.xmlfile.View"
+        ruleset="plone.content.itemView"
         />
 
 
